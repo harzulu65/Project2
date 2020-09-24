@@ -16,32 +16,6 @@ module.exports = function (app) {
 
   // Search API route
 
-  app.get("/api/searchemployee/?", function (req, res) {
-    var first = req.query.first_name;
-    //console.log("employee one search: primero", first);
-    db.Employee.findOne({
-      where: {
-        first_name: first,
-      },
-    }).then(function (results) {
-      res.json(results);
-      return results;
-    });
-  });
-
-  app.get("/api/searchemployeelast/?", function (req, res) {
-    var last = req.query.last_name;
-    //console.log("employee one search: primero", last);
-    db.Employee.findOne({
-      where: {
-        last_name: last,
-      },
-    }).then(function (results) {
-      res.json(results);
-      return results;
-    });
-  });
-
   // app.get("/api/Employees/:id", function(req, res) {
   //   db.Employee.findOne({
   //     where: {
